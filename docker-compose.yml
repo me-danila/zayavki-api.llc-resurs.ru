@@ -1,0 +1,16 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: resource-webhook-api
+    restart: unless-stopped
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+    # Create tmp directory if it doesn't exist and mount it if needed
+    # volumes:
+    #   - ./tmp:/usr/src/app/tmp
