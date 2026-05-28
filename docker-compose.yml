@@ -11,6 +11,5 @@ services:
       - .env
     environment:
       - NODE_ENV=production
-    # Create tmp directory if it doesn't exist and mount it if needed
-    # volumes:
-    #   - ./tmp:/usr/src/app/tmp
+    volumes:
+      - ./tmp:/usr/src/app/tmp
